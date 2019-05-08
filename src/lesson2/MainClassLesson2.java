@@ -18,7 +18,6 @@ public class MainClassLesson2 {
         massive[8] = 0;
         massive[9] = 0;
 
-
         int maxmassive = massive.length;
 
         for(int i = 0; i < maxmassive; i++){
