@@ -12,23 +12,7 @@ public class MainClass {
     public static void main(String[] args) {
 
 
-//        int y = rand.nextInt();
-//        System.out.println(y);
-//
-//
-//            int x = sc.nextInt();
-////        int y = sc.nextInt();
-//
-//
-//            if (x == y){
-//                System.out.println("Вы выиграли!");
-//            }else {
-//                if (x < y){
-//                    System.out.println("Число больше");
-//                }else {
-//                    System.out.println("Число меньше");
-//                }
-//            }
+
 
 
         myPlayStart(10);
