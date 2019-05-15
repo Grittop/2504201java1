@@ -136,29 +136,29 @@ public class MainClassLesson2 {
 
 
 
-    private static boolean checkBalance(int[] massive5) {
-
-        int[] massive5 = { 1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1 };
-
-        int first, end;
-        first = 0;
-        end = 0;
-
-        for (int i = 0; i < massive5.length + 1; i++) {
-
-
-            for (int d = 0; d < i; d++) {
-                first += massive5[d];
-            }
-
-            for (int d = i; d < massive5.length; d++) {
-                end = end + massive5[d];
-            }
-
-            if (first == end) return true;
-        }
-        return false;
-    }
+//    private static boolean checkBalance(int[] massive5) {
+//
+//        int[] massive5 = { 1, 5, 3, 2, 11, 4, 5, 3, 4, 8, 9, 1 };
+//
+//        int first, end;
+//        first = 0;
+//        end = 0;
+//
+//        for (int i = 0; i < massive5.length + 1; i++) {
+//
+//
+//            for (int d = 0; d < i; d++) {
+//                first += massive5[d];
+//            }
+//
+//            for (int d = i; d < massive5.length; d++) {
+//                end = end + massive5[d];
+//            }
+//
+//            if (first == end) return true;
+//        }
+//        return false;
+//    }
 
 //    Написать метод, которому на вход подается одномерный массив и число n (может быть положительным, или отрицательным),
 //    при этом метод должен сместить все элементымассива на n позиций.
@@ -187,5 +187,5 @@ public class MainClassLesson2 {
     }
 
 
-}
+
 
