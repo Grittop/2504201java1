@@ -18,34 +18,46 @@ public class MainClass {
         myPlayStart(10);
 
 
-        equalsString("", "");
+//        equalsString("", "");
 
     }
 
     public static void myPlayStart(int n) {
 
-        int y = rand.nextInt(n);
-        System.out.println("Введите число:");
-        int x = -1;
 
-        for (int i = 0; i < 3; i++) {
+        int onemore = 1;
+
+        while (onemore == 1){
+
+            int y = rand.nextInt(n);
+            System.out.println("Введите число:");
+            int x = -1;
+
+            for (int i = 0; i < 3; i++) {
 
 
-            x = sc.nextInt(n);
+                x = sc.nextInt(n);
 
 
-            if (x == y) {
-                System.out.println("Вы выиграли!");
-                break;
-            } else {
-                if (x < y) {
-                    System.out.println("Число больше");
+                if (x == y) {
+                    System.out.println("Вы выиграли!");
+                    break;
                 } else {
-                    System.out.println("Число меньше");
+                    if (x < y) {
+                        System.out.println("Число больше");
+                    } else {
+                        System.out.println("Число меньше");
+                    }
                 }
+
             }
 
+            System.out.println("Повторить игру? 1 - Да, 0 - Нет");
+            onemore = sc.nextInt();
+
         }
+
+
     }
 
 
