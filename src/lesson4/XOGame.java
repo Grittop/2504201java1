@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class XOGame {
 
     static final int SIZE =  3;
-//    static final int DOTS_TO_WIN = 3;
+    static final int DOTS_TO_WIN = 3;
 
     static final char DOT_X = 'X';
     static final char DOT_O = 'O';
@@ -119,13 +119,35 @@ public class XOGame {
     }
 
     public static void aiTurn(){
-        int x,y;
 
-        do {
-            x = random.nextInt(SIZE);
-            y = random.nextInt(SIZE);
 
-        }while (!isCellValid(y,x));
+        int x=-1 ,y=-1;
+
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                if (isCellValid(i, j)){
+                    map[i][j] = DOT_X;
+                    if (checkWin(DOT_X)){
+                        x = j;
+                        y = i;
+                    }
+                    map[i][j] = DOT_EPTY;
+                }
+
+            }
+
+        }
+
+        if (x==-1 && y==-1){
+
+            do {
+                x = random.nextInt(SIZE);
+                y = random.nextInt(SIZE);
+
+            }while (!isCellValid(y,x));
+
+        }
+
         map[y][x] = DOT_O;
 
     }
@@ -145,10 +167,85 @@ public class XOGame {
         return k == 0;
     }
 
+    public static boolean checkX(int x, int y, char symbol) {
+
+        if (x < 0 || y < 0 || x + DOTS_TO_WIN > SIZE) {
+
+            return false;
+        }
+
+        int k = 0;
+        for (int i = 0; i < DOTS_TO_WIN; i++) {
+            if (map[i+x][y] == symbol){
+                k++;
+            }
+            
+        }
+        return k == DOTS_TO_WIN;
+
+    }
+
+    public static boolean checkY(int x, int y, char symbol){
+        if (x < 0 || y < 0 || y + DOTS_TO_WIN > SIZE) {
+
+            return false;
+        }
+
+        int k = 0;
+        for (int i = 0; i < DOTS_TO_WIN; i++) {
+            if (map[x][i+y] == symbol){
+                k++;
+            }
+
+        }
+        return k == DOTS_TO_WIN;
+    }
+
+    public static boolean checkDiagonal1(int x, int y, char symbol){
+        if (x < 0 || y < 0 || y + DOTS_TO_WIN > SIZE || x + DOTS_TO_WIN > SIZE) {
+
+            return false;
+        }
+
+        int k = 0;
+        for (int i = 0; i < DOTS_TO_WIN; i++) {
+            if (map[i+x][i+y] == symbol){
+                k++;
+            }
+
+        }
+        return k == DOTS_TO_WIN;
+    }
+
+    public static boolean checkDiagonal2(int x, int y, char symbol){
+        if (x < 0 || x + DOTS_TO_WIN > SIZE || y+1 - DOTS_TO_WIN < 0) {
+
+            return false;
+        }
+
+        int k = 0;
+        for (int i = 0; i < DOTS_TO_WIN; i++){
+            if (map[x+i][y-i] == symbol){
+                k++;
+            }
+
+        }
+        return k == DOTS_TO_WIN;
+    }
+
     public static boolean checkWin(char symbol){
 
-        if (map[0][0] == symbol && map[0][1] == symbol && map[0][2] == symbol) return true;
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                if (checkX(i, j, symbol) || checkY(i, j, symbol) || checkDiagonal1(i, j, symbol) || checkDiagonal2(i, j, symbol)){
+                    return true;
+                }
 
+            }
+
+        }
         return false;
     }
+
+
 }
