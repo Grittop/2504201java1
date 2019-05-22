@@ -19,9 +19,14 @@ public class Main {
         personArray[3] = new Sotrudnik("Бузова Ольга Петровна", "секретарь", "zzz@bbbb.ru", "89745553", 35000, 23);
         personArray[4] = new Sotrudnik("Боярский Михаил Иваныч", "водитель", "vvv@bbbb.ru", "89700000", 15000, 70);
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < personArray.length; i++) {
 
-            personArray[i].info40();
+            if (personArray[i].age > 40){
+
+                personArray[i].info();
+            }
+
+//            personArray[i].info40();
         }
 
 

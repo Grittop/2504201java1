@@ -26,11 +26,11 @@ public class Sotrudnik {
 
 
 
-        public void info40(){
-
-            if (age > 40){
-                System.out.println("ФИО: "+ fio +", Должность: " + dolzhnost + ", Email: " + phone + ", Зарплата: " + zarplata + ", Возраст: " + age);
-            }
+//        public void info40(){
+//
+//            if (age > 40){
+//                System.out.println("ФИО: "+ fio +", Должность: " + dolzhnost + ", Email: " + phone + ", Зарплата: " + zarplata + ", Возраст: " + age);
+//            }
 
     }
 
