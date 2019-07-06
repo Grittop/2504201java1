@@ -37,7 +37,7 @@ public class MyWindow extends JFrame {
         });
 
 
-        // объединяем 2 кнопки btn2 и btn3 в одну панель, тк обо в SOUTH и btn3 не будет видно
+        // объединяем 2 кнопки btn2 и btn3 в одну панель, тк обе в SOUTH и btn3 не будет видно
         JPanel sPanel = new JPanel(new GridLayout(1, 2));
 
         JButton btn2 = new JButton("Exit");
